@@ -29,7 +29,7 @@ In interface builder, drag one UIView and set its class as MultiStepSlider.
 func configureSlider(intervals intervals: [Interval], preSelectedRange: RangeValue?)
 ```
 The first parameter is an array of type **Interval** which is defined as:
-```
+```swift
 public struct Interval {
 var min: Float = 0.0
 var max: Float = 1.0
@@ -37,7 +37,7 @@ var stepValue: Float = 1.0
 }
 ```
 The second parameter is of type **RangeValue** which is defined as:
-```
+```swift
 public struct RangeValue {
 var lower: Float = 0.0
 var upper: Float = 0.0
@@ -51,17 +51,19 @@ Warning: Range contains invalid node
 ```
 
 #### Example
-```
+```swift
 @IBOutlet weak var slider: MultiStepRangeSlider!
+
 override func viewDidLoad() {
-super.viewDidLoad()
-let intervals = [Interval(min: 50000, max: 100000, stepValue: 10000),
-Interval(min: 100000, max: 1000000, stepValue: 100000),
-Interval(min: 1000000, max: 3000000, stepValue: 500000)]
-let preSelectedRange = RangeValue(lower: 80000, upper: 500000)
-slider.configureSlider(intervals: intervals, preSelectedRange: preSelectedRange)
-print("continuous: lower = \(slider.continuousCurrentValues.lower) higher = \(slider.continuousCurrentValues.upper)")
-print("discrete: lower = \(slider.discreteCurrentValue.lower) higher = \(slider.discreteCurrentValue.upper)")
+  super.viewDidLoad()
+  let intervals = [Interval(min: 50000, max: 100000, stepValue: 10000),
+                   Interval(min: 100000, max: 1000000, stepValue: 100000),
+                   Interval(min: 1000000, max: 3000000, stepValue: 500000)]
+                   
+  let preSelectedRange = RangeValue(lower: 80000, upper: 500000)
+  slider.configureSlider(intervals: intervals, preSelectedRange: preSelectedRange)
+  print("continuous: lower = \(slider.continuousCurrentValues.lower) higher = \(slider.continuousCurrentValues.upper)")
+  print("discrete: lower = \(slider.discreteCurrentValue.lower) higher = \(slider.discreteCurrentValue.upper)")
 }
 ```
 <img src="https://cloud.githubusercontent.com/assets/3590619/16224574/4260d8a4-37c0-11e6-8d39-7d9c6b7497af.gif" width="400" display="inline-block">
@@ -86,7 +88,7 @@ The default color is lightGrayColor.
 
 The color used to tint the part of the track which is inside the range of lowerValue and upperValue.
 
-The default color is #007AFF (rgba = 0, 122, 255, 1)
+The default color is `#007AFF` (rgba = 0, 122, 255, 1)
 
 #### trackCurvaceousness
 
