@@ -14,8 +14,8 @@ pod ‘MultiStepSlider’, '~> 1.2'
 ```
 #Usage
 
-```objc
-import ‘MultiStepSlider’
+```swift
+import 'MultiStepSlider'
 ```
 
 In interface builder, drag one UIView and set its class as MultiStepSlider.
@@ -25,22 +25,22 @@ In interface builder, drag one UIView and set its class as MultiStepSlider.
 #### Configuration
 
 **MultiStepSlider** can be configured by the following method. 
-```
+```swift
 func configureSlider(intervals intervals: [Interval], preSelectedRange: RangeValue?)
 ```
 The first parameter is an array of type **Interval** which is defined as:
 ```swift
 public struct Interval {
-var min: Float = 0.0
-var max: Float = 1.0
-var stepValue: Float = 1.0
+  var min: Float = 0.0
+  var max: Float = 1.0
+  var stepValue: Float = 1.0
 }
 ```
 The second parameter is of type **RangeValue** which is defined as:
 ```swift
 public struct RangeValue {
-var lower: Float = 0.0
-var upper: Float = 0.0
+  var lower: Float = 0.0
+  var upper: Float = 0.0
 }
 ```
 This dictates the initial positions for lower and upper thumb. The _lower_ and _upper_ of **RangeValue** should lie within the interval specified and should be a valid node value. For example, if the there is an interval
